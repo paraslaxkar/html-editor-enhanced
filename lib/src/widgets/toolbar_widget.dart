@@ -335,12 +335,24 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
           absorbing: !_enabled,
           child: Opacity(
             opacity: _enabled ? 1 : 0.5,
-            child: Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Wrap(
-                runSpacing: widget.htmlToolbarOptions.gridViewVerticalSpacing,
-                spacing: widget.htmlToolbarOptions.gridViewHorizontalSpacing,
-                children: _buildChildren(),
+            child: Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(
+                    color: Color(0xffE4E4E7)
+                  )
+                )
+              ),
+              padding: const EdgeInsets.all(10.0),
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: Wrap(
+                  alignment: WrapAlignment.start,
+                  crossAxisAlignment: WrapCrossAlignment.start,
+                  runSpacing: widget.htmlToolbarOptions.gridViewVerticalSpacing,
+                  spacing: widget.htmlToolbarOptions.gridViewHorizontalSpacing,
+                  children: _buildChildren(),
+                ),
               ),
             ),
           ),
@@ -363,7 +375,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                     SliverFillRemaining(
                       hasScrollBody: false,
                       child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: _buildChildren(),
                       ),
                     ),
@@ -455,7 +467,7 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                           SliverFillRemaining(
                             hasScrollBody: false,
                             child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: _buildChildren(),
                             ),
                           ),
@@ -538,42 +550,42 @@ class ToolbarWidgetState extends State<ToolbarWidget> {
                   child: PointerInterceptor(
                       child: Text('Header 1',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 32))),
+                              fontWeight: FontWeight.bold, fontSize: 32,color: Colors.black))),
                 ),
                 CustomDropdownMenuItem(
                   value: 'h2',
                   child: PointerInterceptor(
                       child: Text('Header 2',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 24))),
+                              fontWeight: FontWeight.bold, fontSize: 24,color: Colors.black))),
                 ),
                 CustomDropdownMenuItem(
                   value: 'h3',
                   child: PointerInterceptor(
                       child: Text('Header 3',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18))),
+                              fontWeight: FontWeight.bold, fontSize: 18,color: Colors.black))),
                 ),
                 CustomDropdownMenuItem(
                   value: 'h4',
                   child: PointerInterceptor(
                       child: Text('Header 4',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 16))),
+                              fontWeight: FontWeight.bold, fontSize: 16,color: Colors.black))),
                 ),
                 CustomDropdownMenuItem(
                   value: 'h5',
                   child: PointerInterceptor(
                       child: Text('Header 5',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 13))),
+                              fontWeight: FontWeight.bold, fontSize: 13,color: Colors.black))),
                 ),
                 CustomDropdownMenuItem(
                   value: 'h6',
                   child: PointerInterceptor(
                       child: Text('Header 6',
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 11))),
+                              fontWeight: FontWeight.bold, fontSize: 11,color: Colors.black))),
                 ),
               ],
               value: _fontSelectedItem,
